@@ -13,6 +13,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+     </head>
+
         <style>
             .invoice-box {
                 max-width: 800px;
@@ -109,15 +111,27 @@
     </head>
 
     <body>
-        <div class="invoice-box">
+        
+<script>
+    $('#cetak').click(function(){
+        // tentukan elemen html yang akan dibuat jadi pdf
+        let elemenNota = document.getElementById('kotakNota')
+        
+        // panggil fungsi html2pdf dengan parameter elemen html sebelumnya
+        html2pdf(elemenNota)
+      })
+</script>
+        
+      
+        <div class="invoice-box" id="cetak nota">
             <table cellpadding="0" cellspacing="0">
                 <tr class="top">
                     <td colspan="2">
                         <table>
                             <tr>
                                 <td class="title">
-                                    <img src="rpl.jpg" style="height: 50px" class="rounded-1">
-                                
+                                    <img
+                                        src=" rpl.jpg" style="height:50px" class="rounded-1">
                                 </td>
 
                                 <td>
@@ -190,10 +204,10 @@
                     <td></td>
 
                     <td>Total: $385.00</td>
+                
                 </tr>
             </table>
-            <a href="nota.html" class="btn btn-primary">Cetak Nota</a>
-
+  <button class="btn btn-primary" id="cetak">Cetak Nota</button>
         </div>
     </body>
 </html>
